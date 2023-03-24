@@ -20,7 +20,7 @@ def generate_response(prompt, file_path):
     message = response.choices[0].text.strip()
     return message
 
-input_message = f"Generate junit for this attached file:\n\n'
+input_message = f"Generate junit for this attached file:\n\n"
 
 fileContent = open('file', 'r')
 Lines = fileContent.readlines()
