@@ -6,8 +6,10 @@ pipeline {
   stages {
     stage('hello') {
       steps {
-        echo 'hello changed 2'
-        echo $OPENAI_API_KEY
+        script {
+          sh 'echo "from script"'
+          sh 'echo $OPENAI_API_KEY'
+        }
       }
     }
 
