@@ -27,6 +27,6 @@ Lines = fileContent.readlines()
 for line in Lines:
     print("processing file :"+line.strip())
     response = generate_response(input_message, line.strip())
-    junitFile = open("Test"+ tempFile, "w")
+    junitFile = open("Test"+ line.strip(), "w")
     junitFile.write(response)
     junitFile.close()
