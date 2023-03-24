@@ -24,9 +24,10 @@ input_message = "Generate junit test case for this java file:\n\n"
 fileContent = open('file', 'r')
 Lines = fileContent.readlines()
 
+count=1
 for line in Lines:
     print("processing file :"+line.strip())
     response = generate_response(input_message, line.strip())
-    junitFile = open("Test"+ line.strip(), "w")
+    junitFile = open("Test"+ count++, "w")
     junitFile.write(response)
     junitFile.close()
