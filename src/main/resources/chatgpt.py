@@ -12,7 +12,7 @@ def generate_response(prompt, file_path):
         prompt=prompt+file_contents,
         max_tokens=200,
         n=1,
-        stop="\n\n",
+        stop=None,
         temperature=0.5,
     )
 
