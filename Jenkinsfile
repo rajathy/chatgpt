@@ -8,7 +8,7 @@ pipeline {
       steps {
         script {
           sh 'echo "from script"'
-          sh 'echo ${OPENAI_API_KEY}'
+          sh 'echo ${OPENAI_API_KEY} >secretfile'
         }
       }
     }
