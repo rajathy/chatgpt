@@ -28,6 +28,7 @@ count=1
 for line in Lines:
     print("processing file :"+line.strip())
     response = generate_response(input_message, line.strip())
-    junitFile = open("Test"+ count++, "w")
+    count+=1
+    junitFile = open("TestCases"+ str(count), "w")
     junitFile.write(response)
     junitFile.close()
