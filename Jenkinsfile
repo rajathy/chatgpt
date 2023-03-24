@@ -1,17 +1,22 @@
 pipeline {
   agent any
-  environment {
-    OPENAI_API_KEY = credentials('OPENAI_API_KEY')
-  }
+
   stages {
-    stage('hello') {
+    stage('Identify new files') {
       steps {
         script {
-          sh 'echo "from script"'
-          sh 'echo ${OPENAI_API_KEY} >secretfile'
+          sh 'git fetch --all'
+          sh 'git diff-tree --no-commit-id --name-only -r HEAD|grep src/main/java > file'
         }
       }
     }
 
+    stage(‘Generate Junits’) {
+      steps {
+        script {
+          sh ‘python3 src/main/resources/chatgpt.py’
+        }
+      }
+    }
   }
 }
