@@ -12,7 +12,7 @@ def generate_response(prompt, file_path):
         prompt=prompt,
         max_tokens=200,
         n=1,
-        stop=\n\n,
+        stop="\n\n",
         temperature=0.5,
         files={"attachment": file_contents},
     )
