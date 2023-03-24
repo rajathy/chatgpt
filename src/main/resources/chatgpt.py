@@ -20,14 +20,14 @@ def generate_response(prompt, file_path):
     message = response.choices[0].text.strip()
     return message
 
-input_message = f”Generate junit for this attached file:\n\n“
+input_message = f"Generate junit for this attached file:\n\n'
 
-fileContent = open(‘file’, 'r')
+fileContent = open('file', 'r')
 Lines = fileContent.readlines()
 
 for line in Lines:
-    print(“processing file :”+line.strip())
+    print("processing file :"+line.strip())
     response = generate_response(input_message, line.strip())
-    junitFile = open(“src/test/java/Test“+ tempFile, “w”)
+    junitFile = open("src/test/java/Test"+ tempFile, "w")
     junitFile.write(response)
     junitFile.close()
