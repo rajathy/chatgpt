@@ -11,7 +11,7 @@ pipeline {
       }
     }
 
-    stage(‘Generate Junits’) {
+    stage('Generate Junits') {
       steps {
         script {
           sh ‘python3 src/main/resources/chatgpt.py’
