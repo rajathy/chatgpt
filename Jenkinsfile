@@ -16,7 +16,7 @@ pipeline {
     stage('Generate Junits') {
       steps {
         script {
-          sh 'pip install openai'
+          sh 'pip3 install openai'
           sh 'python3 src/main/resources/chatgpt.py'
         }
       }
