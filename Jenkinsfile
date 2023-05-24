@@ -6,10 +6,10 @@ pipeline {
       steps {
         script {
           print "enterded here"
-          sh 'git fetch --all'
-          sh 'git diff-tree --no-commit-id --name-only -r HEAD|grep src/main/java > file'
-          sh 'echo "identified files are : "'
-          sh 'cat file'
+          bat 'git fetch --all'
+          bat 'git diff-tree --no-commit-id --name-only -r HEAD|grep src/main/java > file'
+          bat 'echo "identified files are : "'
+          bat 'cat file'
         }
       }
     }
@@ -17,8 +17,8 @@ pipeline {
     stage('Generate Junits') {
       steps {
         script {
-          sh 'pip3 install openai'
-          sh 'python3 src/main/resources/chatgpt.py'
+          bat 'pip3 install openai'
+          bat 'python3 src/main/resources/chatgpt.py'
         }
       }
     }
@@ -26,7 +26,7 @@ pipeline {
     stage('clean up') {
       steps {
         script {
-          sh 'rm file'
+          bat 'rm file'
         }
       }
     }
